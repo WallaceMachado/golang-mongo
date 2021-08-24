@@ -2,33 +2,21 @@ package main
 
 import (
 	"fmt"
-	"golang-mongo/models"
 	"golang-mongo/services"
 	"log"
 	"net/http"
-	"time"
 )
 
 func main() {
 	fmt.Println("Rodando a API")
-
-	user := models.User{
-
-		Name:      "Jesus",
-		Email:     "jesus.matiz@micorreo.com",
-		CreatedAt: time.Now(),
-		UpdatedAt: time.Now(),
-	}
-
-	err := services.Create(user)
-
-	fmt.Println(err)
+	userId := "6124e0ca7526bc5b240d15fb"
+	err := services.Delete(userId)
 
 	if err != nil {
-		fmt.Println("La prueba de persistencia de datos del usuario a fallado")
+		fmt.Println("Error al tratar de eliminar el usuario")
 
 	} else {
-		fmt.Println("La prueba finalizo con exito!")
+		fmt.Println("La prueba de eliminación finalizo con exito!")
 	}
 
 	log.Fatal(http.ListenAndServe(":5000", nil))
