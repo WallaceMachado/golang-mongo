@@ -2,7 +2,6 @@ package database
 
 import (
 	"context"
-	"fmt"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -10,16 +9,12 @@ import (
 )
 
 var (
-	usr      = "admin"
-	pwd      = "root"
-	host     = "localhost"
-	port     = 27017
-	database = "chBravoDb"
+	database = "test"
 )
 
 func GetCollection(collection string) *mongo.Collection {
 
-	uri := fmt.Sprintf("mongodb+srv://%s:%s@cluster0.pamgw.mongodb.net/%s", usr, pwd, database)
+	uri := "mongodb+srv://admin:root@cluster0.pamgw.mongodb.net/test"
 
 	client, err := mongo.NewClient(options.Client().ApplyURI(uri))
 
