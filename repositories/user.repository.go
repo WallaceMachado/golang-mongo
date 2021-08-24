@@ -9,17 +9,17 @@ func Create(user models.User) error {
 	return nil
 }
 
-func Read() models.Users {
+func Read() (models.Users, error) {
+
+	return nil, nil
+}
+
+func Update(user models.User, userId string) error {
 
 	return nil
 }
 
-func Update() error {
-
-	return nil
-}
-
-func Delete() error {
+func Delete(userId string) error {
 
 	return nil
 }
